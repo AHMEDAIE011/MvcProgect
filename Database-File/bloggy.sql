@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2024 at 04:58 PM
+-- Generation Time: Jun 10, 2024 at 04:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `comment` text NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `name`, `email`, `comment`, `product_id`) VALUES
+(1, 'ahmed', 'info@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quam hic iusto tenetur aliquid, neque pariatur beatae. Similique, suscipit reprehenderit accusamus aliquid mollitia quisquam corrupti reiciendis, delectus sunt eaque itaque.\r\n', 6),
+(2, 'ahmedali', 'info2222222@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quam hic iusto tenetur aliquid, neque pariatur beatae. Similique, suscipit reprehenderit accusamus aliquid mollitia quisquam corrupti reiciendis, delectus sunt eaque itaque.\r\n', 6),
+(3, 'ahmed ali sayed', 'admin@admin.com', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quam hic iusto tenetur aliquid, neque pariatur beatae. Similique, suscipit reprehenderit accusamus aliquid mollitia quisquam corrupti reiciendis, delectus sunt eaque itaque.\r\n', 6),
+(4, 'ahmed 200', 'admin@AHMED.com', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quam hic iusto tenetur aliquid, neque pariatur beatae. Similique, suscipit reprehenderit accusamus aliquid mollitia quisquam corrupti reiciendis, delectus sunt eaque itaque.\r\n', 7),
+(5, 'mohamed', 'capomohamed819@yahoo.com', 'aasdasdsddadsddassadsadasdsadasaasdasdsddadsddassadsadasdsadasaasdasdsddadsddassadsadasdsadas', 6);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `images`
 --
 
@@ -38,18 +63,16 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `name`, `product_id`) VALUES
-(20, '1717271375.jpg', 5),
-(21, '1717271391.jpg', 5),
-(22, '1717338451.jpg', 5),
-(23, '1717338590.jpg', 2),
-(24, '1717338604.jpg', 2),
-(25, '1717338616.jpg', 2),
-(26, '1717338666.jpg', 6),
-(27, '1717338676.jpg', 6),
-(28, '1717338684.jpg', 6),
 (29, '1717338798.jpg', 7),
 (30, '1717338813.jpg', 7),
-(31, '1717338822.jpg', 7);
+(31, '1717338822.jpg', 7),
+(35, '1718024745.webp', 2),
+(36, '1718024761.jpeg', 2),
+(37, '1718024841.jpeg', 2),
+(38, '1718025731.jpg', 5),
+(39, '1718025743.webp', 5),
+(40, '1718026369.webp', 6),
+(41, '1718026379.jpeg', 6);
 
 -- --------------------------------------------------------
 
@@ -70,10 +93,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `title`, `details`, `service_id`) VALUES
-(2, 'prudect Web design 1', 'The last prudect in inserted', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos numquam? Laborum delectus sint facilis natus ratione cum exercitationem? Alias nam aspernatur molestiae culpa mollitia vel fugiat, repellendus quibusdam sunt.\r\n', 1),
-(5, 'products Markting 1', 'this is products details', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos numquam? Laborum delectus sint facilis natus ratione cum exercitationem? Alias nam aspernatur molestiae culpa mollitia vel fugiat, repellendus quibusdam sunt.', 8),
-(6, 'products Web design 2', 'The products details', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos numquam? Laborum delectus sint facilis natus ratione cum exercitationem? Alias nam aspernatur molestiae culpa mollitia vel fugiat, repellendus quibusdam sunt.', 1),
-(7, 'products Markting 2', 'this is last product details', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos numquam? Laborum delectus sint facilis natus ratione cum exercitationem? Alias nam aspernatur molestiae culpa mollitia vel fugiat, repellendus quibusdam sunt.', 8);
+(2, 'منتخب مصر', 'هشام يكن يضع روشتة فوز منتخب مصر على غينيا بيساو..فيديو ', ' أكد هشام يكن، نجم الزمالك ومنتخب مصر السابق، ضرورة الربط بين الشق الدفاعى مع الشق الهجومى من أجل تحقيق فوز منتخب مصر على غينيا بيساو فى المواجهة المحدد لها السابعة مساء اليوم، فى الجولة الرابعة من تصفيات أفريقيا المؤهلة لنهائيات كأس العالم.\r\n\r\nوأضاف يكن، فى مداخلة هاتفية على تليفزيون اليوم السابع، أن انسجام اللاعبين ضرورة أيضا يمثل 70% من قوة الفراعنة، مشيرا إلى أهمية دور محمد صلاح فى المنتخب، مطالبا حسام حسن المدير الفنى للفراعنة بضرورة خلق الدعم لصلاح فى الهجوم عن طريق زملائه\r\n', 1),
+(5, 'منتخب مصر لسيدات سلاح', 'سيدات مصر لسلاح سيف المبارزة يتوجن بذهبية ببطولة أفريقيا للفرق ', ' توج منتخب مصر لسيدات سلاح سيف المبارزة فى منافسات الفرق بالميدالية الذهبية ببطولة أفريقيا للسلاح التي تستضيفها المغرب وتستمر حتى 10 يونيو الجاري.\r\n\r\nوأحرز منتخب \"مصر\" الذهبية بعد فوزه على منتخب جنوب أفريقيا في المباراة النهائية بنتيجة 40 - 21، ليحصد المنتخب المصري على الميدالية الذهبية فيما حقق المنتخب جنوب أفريقيا الميدالية الفضية.', 1),
+(6, 'السياحة:', 'جهود مكثفة لتقديم كافة التسهيلات وخدمات متميزة شاملة لحجاج السياحة ', ' في إطار حرص وزارة السياحة والآثار على تعزيز جودة الخدمات المقدمة لحجاج السياحة والتأكد من تقديم لهم أفضل الخدمات، تكثف الوزارة، جهودها التي تقوم بها لتقديم كافة التسهيلات والخدمات اللازمة المتميزة والرعاية الشاملة لهؤلاء الحجاج بما يضمن تجربة حج مريحة وميسرة، وهو ما يأتي في ضوء توجيهات الدولة المصرية في هذا الإطار.', 8),
+(7, 'التعاون الدولى', 'وزيره التعاون الدولى تعقد مائدة مستديرة مع نائب رئيس بنك التنمية الجديد ', 'قبيل انطلاق فعاليات الملتقى الأول لبنك التنمية الجديد في مصر، عقدت الدكتورة رانيا المشاط، وزيرة التعاون الدولي والمحافظ المناوب لمصر لدى بنك التنمية الجديد، مائدة مستديرة مع أنيل كيشورا، نائب رئيس بنك التنمية الجديد وكبير مسؤولي المخاطر، وبمشاركة العديد من ممثلي القطاع الخاص ومراكز الفكر والأبحاث في مصر، من بينهم أسامة الجوهري، مساعد رئيس الوزراء ورئيس مركز المعلومات ودعم اتخاذ القرار، ومحمد إيهاب، المدير التنفيذي لشركة إنطلاق، والدكتور سمير صبري،', 8);
 
 -- --------------------------------------------------------
 
@@ -92,8 +115,8 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `details`) VALUES
-(1, 'Web design ', 'Web design : Lorem ipsum dolor, sit amet consectetur '),
-(8, 'Markting     ', 'Markting:  Lorem ipsum dolor, sit amet consectetur ');
+(1, 'الرياضه', 'كل ما يهمك حول الاخبار الخاصه بالرياضه'),
+(8, 'الاقتصاد', 'كل ما يهمك حول الاخبار الخاصه بالاقتصاد');
 
 -- --------------------------------------------------------
 
@@ -128,6 +151,13 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`) VALUES
 --
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -158,22 +188,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -184,6 +220,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
 -- Constraints for table `images`

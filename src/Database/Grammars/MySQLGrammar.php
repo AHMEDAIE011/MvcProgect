@@ -40,7 +40,10 @@ class MySQLGrammar
         $query = "SELECT {$columns} FROM ".Model::getTableName();
 
         if ($filter) {
-            $query .= " WHERE {$filter[0]} {$filter[1]} ?";
+            $query .= " WHERE {$filter[0]} {$filter[1]}  ?";
+        }
+        if (isset($filter[3])) {
+            $query .= "LIMIT {$filter[3]} ";
         }
 
         return $query;

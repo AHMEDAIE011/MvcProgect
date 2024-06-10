@@ -13,6 +13,7 @@ use SecTheater\Http\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/Product-page', [HomeController::class, 'Product_page']);
 Route::get('/Product-info', [HomeController::class, 'Product_info']);
+Route::post('/postComment', [HomeController::class, 'postComment']);
 
 Route::get('/dashboard', [AdminController::class, 'index']);
 // -------------------------------- Services -------------------------
@@ -21,7 +22,7 @@ Route::post('/add-services', [ServiceController::class, 'add']);
 Route::post('/update-services', [ServiceController::class, 'update']);
 Route::get('/delete-services', [ServiceController::class, 'delete']);
 
-// -------------------------------- Services -------------------------
+// -------------------------------- Products -------------------------
 Route::get('/all-product', [PrudectController::class, 'index']);
 Route::post('/add-product', [PrudectController::class, 'add']);
 Route::post('/update-product', [PrudectController::class, 'update']);

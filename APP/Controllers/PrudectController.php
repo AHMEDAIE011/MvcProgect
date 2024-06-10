@@ -32,9 +32,9 @@ class PrudectController
     {
         $validator = Validator();
         $validator->setRules([
-            'name' => 'required|between:8,32',
-            'title' => 'required|between:8,32',
-            'details' => 'required|between:20,250',
+            'name' => 'required|between:8,132',
+            'title' => 'required|between:8,132',
+            'details' => 'required|between:20,1000',
             'serviceID' => 'required',
         ]);
 
@@ -63,9 +63,9 @@ class PrudectController
     {
         $validator = Validator();
         $validator->setRules([
-            'name' => 'required|between:8,32',
-            'title' => 'required|between:8,32',
-            'details' => 'required|between:20,250',
+            'name' => 'required|between:8,132',
+            'title' => 'required|between:8,132',
+            'details' => 'required|between:20,1000',
             'serviceID' => 'required',
         ]);
 

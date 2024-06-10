@@ -26,6 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="<?php public_path(); ?>site/assets/css/style.css" rel="stylesheet">
+  <link href="<?php public_path(); ?>site/assets/css/style-2.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Day
